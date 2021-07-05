@@ -1,0 +1,13 @@
+<ul>
+  <li *ngFor="let node of nodes">
+    <div>
+      <label> 
+        <input type="checkbox" [checked]="node.checked" [ngModel]="node.checked" 
+          [indeterminate]="node.indeterminate" (ngModelChange)="selectNode(node, $event)">
+          {{node.name}} 
+      </label>
+
+      <tree-view [nodes]="node.children"></tree-view>
+    </div>
+  </li>
+</ul>
